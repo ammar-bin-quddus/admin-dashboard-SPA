@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import UseUsers from "../hooks/UseUsers";
 
 const AllUsers = () => {
-  return (
-    <div>AllUsers</div>
-  )
-}
+  const [users, error] = UseUsers();
 
-export default AllUsers
+  console.log(users, error);
+
+  return <div>AllUsers</div>;
+};
+
+export default AllUsers;

@@ -4,6 +4,7 @@ import AllUsers from "../pages/AllUsers";
 import Products from "../pages/Products";
 import Login from "../auth/Login";
 import Register from "../auth/Register";
+import ProtectedRoutes from "../protectedRoutes/ProtectedRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -12,11 +13,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/allUsers",
-        element: <AllUsers />,
+        element: <ProtectedRoutes><AllUsers /></ProtectedRoutes>,
       },
       {
         path: "/products",
-        element: <Products />,
+        element: <ProtectedRoutes><Products /></ProtectedRoutes>,
       },
     ],
   },

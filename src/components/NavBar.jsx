@@ -1,10 +1,9 @@
-import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../provider/AuthProvider";
 import { LiaSignOutAltSolid } from "react-icons/lia";
+import UseAuth from "../hooks/UseAuth";
 
 const NavBar = () => {
-  const { user, handleLogOut } = useContext(AuthContext);
+  const { user, handleLogOut } = UseAuth();
 
   return (
     <div className="w-full px-3 py-4 bg-[#EAE2C6] flex justify-end">

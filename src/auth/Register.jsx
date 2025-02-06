@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useContext, useState } from "react";
-import { AuthContext } from "../provider/AuthProvider";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
+import UseAuth from "../hooks/UseAuth";
 
 const Register = () => {
   const [isShow, setIsShow] = useState(false);
@@ -17,7 +17,7 @@ const Register = () => {
   } = useForm();
   const password = watch("password");
 
-  const { handleRegister, setLoading, updateUser } = useContext(AuthContext);
+  const { handleRegister, setLoading, updateUser } = UseAuth();
 
   const onSubmit = (data) => {
     const { password, confirmPassword, ...remainData } = data;

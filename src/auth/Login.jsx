@@ -1,12 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { AuthContext } from "../provider/AuthProvider";
 import { useForm } from "react-hook-form";
+import UseAuth from "../hooks/UseAuth";
 
 const Login = () => {
-  const { handleLogin, setLoading } = useContext(AuthContext);
+  const { handleLogin, setLoading } = UseAuth();
 
   const [isShow, setIsShow] = useState(false);
   const location = useLocation();
@@ -27,6 +27,7 @@ const Login = () => {
       .then((res) => {
         setLoading(false);
         reset();
+        toast.success("Login Successful");
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {

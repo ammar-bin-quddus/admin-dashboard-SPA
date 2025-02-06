@@ -6,7 +6,7 @@ const AllUsers = () => {
 
   console.log(users, error);
 
-  return <div>AllUsers</div>;
+  return <div>AllUsers {users?.length}</div>;
 };
 
 export default AllUsers;

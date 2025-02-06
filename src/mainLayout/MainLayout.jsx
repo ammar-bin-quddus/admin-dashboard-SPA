@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
 import Sidebar from "../components/Sidebar";
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Loading from "../components/Loading";
-import { AuthContext } from "../provider/AuthProvider";
+import UseAuth from "../hooks/UseAuth";
 
 const MainLayout = () => {
   
-  const {loading} = useContext(AuthContext);
+  const {loading} = UseAuth();
   
   return (
     <div className="w-full flex">

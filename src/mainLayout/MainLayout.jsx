@@ -2,11 +2,11 @@ import Sidebar from "../components/Sidebar";
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Loading from "../components/Loading";
-import UseAuth from "../hooks/UseAuth";
+import useAuth from "../hooks/useAuth";
 
 const MainLayout = () => {
   
-  const {loading} = UseAuth();
+  const {loading} = useAuth();
   
   return (
     <div className="w-full flex">

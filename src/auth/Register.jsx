@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
-import UseAuth from "../hooks/UseAuth";
+import useAuth from "../hooks/useAuth";
 
 const Register = () => {
   const [isShow, setIsShow] = useState(false);
@@ -17,7 +17,7 @@ const Register = () => {
   } = useForm();
   const password = watch("password");
 
-  const { handleRegister, setLoading, updateUser } = UseAuth();
+  const { handleRegister, setLoading, updateUser } = useAuth();
 
   const onSubmit = (data) => {
     const { password, confirmPassword, ...remainData } = data;

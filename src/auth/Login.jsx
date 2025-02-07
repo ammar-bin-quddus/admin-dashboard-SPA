@@ -3,10 +3,10 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
-import UseAuth from "../hooks/UseAuth";
+import useAuth from "../hooks/useAuth";
 
 const Login = () => {
-  const { handleLogin, setLoading } = UseAuth();
+  const { handleLogin, setLoading } = useAuth();
 
   const [isShow, setIsShow] = useState(false);
   const location = useLocation();

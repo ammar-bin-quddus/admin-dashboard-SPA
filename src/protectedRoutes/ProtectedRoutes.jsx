@@ -1,9 +1,9 @@
 import { Navigate, useLocation } from "react-router-dom";
 import Loading from "../components/Loading";
-import UseAuth from "../hooks/UseAuth";
+import useAuth from "../hooks/useAuth";
 
 const ProtectedRoutes = ({ children }) => {
-  const { user, loading } = UseAuth();
+  const { user, loading } = useAuth();
   const location = useLocation();
 
   if (loading) {

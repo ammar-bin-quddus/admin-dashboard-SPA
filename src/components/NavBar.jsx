@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { LiaSignOutAltSolid } from "react-icons/lia";
-import UseAuth from "../hooks/UseAuth";
+import useAuth from "../hooks/useAuth";
 
 const NavBar = () => {
-  const { user, handleLogOut } = UseAuth();
+  const { user, handleLogOut } = useAuth();
 
   return (
     <div className="w-full px-3 py-4 bg-[#EAE2C6] flex justify-end">

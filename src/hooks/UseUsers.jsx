@@ -1,10 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import UseAuth from "./UseAuth";
+import useAuth from "./useAuth";
 
-const UseUsers = () => {
-  const { user } = UseAuth();
-  const { data: users, error } = useQuery({
+
+const useUsers = () => {
+  const { user } = useAuth();
+  // console.log(user)
+  const { data: users, error, refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
       try {
@@ -20,7 +22,7 @@ const UseUsers = () => {
     },
     enabled: !!user?.email,
   });
-  return [users, error];
+  return {users, error, refetch};
 };
 
-export default UseUsers;
+export default useUsers;
